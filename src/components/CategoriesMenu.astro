@@ -12,21 +12,33 @@ const categories = [
 ];
 ---
 
-<div class="flex flex-nowrap justify-center gap-6 md:gap-10 overflow-hidden py-10" id="categoriesTrack">
-	{categories.map((category) => (
-		<div class="flex flex-col items-center gap-3 flex-shrink-0">
-			<!-- Círculo con borde glow verde neón -->
-			<div class="w-24 h-24 md:w-20 md:h-20 rounded-full border-2 flex items-center justify-center shadow-[0_0_10px_rgba(0,255,0,0.4),0_0_20px_rgba(0,255,0,0.3),0_0_30px_rgba(0,255,0,0.2)]" style="border-color: #00FF00; background: transparent;">
-				<svg class="w-12 h-12 md:w-10 md:h-10 drop-shadow-[0_0_5px_rgba(0,255,0,0.4)]" fill="currentColor" viewBox="0 0 24 24" style="color: #00FF00;">
-					<path d={category.icon} />
-				</svg>
+<style>
+	.scrollbar-hide::-webkit-scrollbar {
+		display: none;
+	}
+	.scrollbar-hide {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+</style>
+
+<div class="overflow-hidden py-10">
+	<div class="flex gap-6 md:gap-10 overflow-x-auto scrollbar-hide" id="categoriesTrack" style="-ms-overflow-style: none; scrollbar-width: none;">
+		{categories.map((category) => (
+			<div class="flex flex-col items-center gap-3 flex-shrink-0">
+				<!-- Círculo con borde glow verde neón -->
+				<div class="w-24 h-24 md:w-20 md:h-20 rounded-full border-2 flex items-center justify-center shadow-[0_0_10px_rgba(0,255,0,0.4),0_0_20px_rgba(0,255,0,0.3),0_0_30px_rgba(0,255,0,0.2)]" style="border-color: #00FF00; background: transparent;">
+					<svg class="w-12 h-12 md:w-10 md:h-10 drop-shadow-[0_0_5px_rgba(0,255,0,0.4)]" fill="currentColor" viewBox="0 0 24 24" style="color: #00FF00;">
+						<path d={category.icon} />
+					</svg>
+				</div>
+				<!-- Nombre de la categoría -->
+				<span class="text-xs md:text-sm font-semibold text-center max-w-22 drop-shadow-[0_0_4px_rgba(0,255,0,0.4)]" style="color: #00FF00;">
+					{category.name}
+				</span>
 			</div>
-			<!-- Nombre de la categoría -->
-			<span class="text-xs md:text-sm font-semibold text-center max-w-22 drop-shadow-[0_0_4px_rgba(0,255,0,0.4)]" style="color: #00FF00;">
-				{category.name}
-			</span>
-		</div>
-	))}
+		))}
+	</div>
 </div>
 
 <script>
@@ -34,10 +46,13 @@ const categories = [
 		const track = document.getElementById('categoriesTrack');
 		if (!track) return;
 
+		// Solo activar en móvil (pantallas menores a 768px)
+		if (window.innerWidth >= 768) return;
+
 		let scrollPosition = 0;
-		const scrollSpeed = 0.3;
+		const scrollSpeed = 0.5;
 		let isRunning = true;
-		let animationId;
+		let animationId: number;
 
 		const scrollCategories = () => {
 			if (!isRunning) return;
@@ -59,21 +74,6 @@ const categories = [
 
 		track.addEventListener('mouseleave', () => {
 			isRunning = true;
-		});
-
-		// Pausar cuando el usuario hace scroll en la página
-		let isPageScrolling = false;
-		let scrollTimeout;
-
-		window.addEventListener('scroll', () => {
-			isPageScrolling = true;
-			isRunning = false;
-			
-			clearTimeout(scrollTimeout);
-			scrollTimeout = setTimeout(() => {
-				isPageScrolling = false;
-				isRunning = true;
-			}, 500);
 		});
 
 		// Iniciar el carrusel automático
