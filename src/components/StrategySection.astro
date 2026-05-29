@@ -34,20 +34,20 @@ const strategyCards = [
 	<div class="absolute bottom-0 right-1/4 w-64 h-64 bg-emerald-600/10 rounded-full blur-3xl"></div>
 
 	<div class="relative z-10 container mx-auto px-4">
-		<h2 class="text-[#00E814] text-2xl md:text-3xl font-bold text-center mb-8" style="text-shadow: 0 0 5px #00E814, 0 0 10px #00E814;">
+		<h2 class="text-[#00E814] text-2xl md:text-3xl font-bold text-center mb-8">
 			Nuestra Estrategia Comercial
 		</h2>
 		
 		<!-- Swiper Container -->
 		<div class="relative py-5">
 			<!-- Botón Izquierdo (solo móvil) -->
-			<button onclick="const track = document.getElementById('strategyTrack'); const cardWidth = track.children[0].offsetWidth; track.scrollBy({left: -(cardWidth * 2 + 16), behavior: 'smooth'})" class="md:hidden absolute left-2 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-black border-2 border-[#00E814] rounded-full flex items-center justify-center text-[#00E814] text-2xl font-bold cursor-pointer" style="box-shadow: 0 0 10px #00E814, 0 0 20px #00E814;">
+			<button onclick="const track = document.getElementById('strategyTrack'); const cardWidth = track.children[0].offsetWidth; track.scrollBy({left: -(cardWidth * 2 + 16), behavior: 'smooth'})" class="md:hidden absolute left-2 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-black border-2 border-[#00E814] rounded-full flex items-center justify-center text-[#00E814] text-2xl font-bold cursor-pointer" style="box-shadow: 0 0 5px #00E814, 0 0 10px #00E814;">
 				&lt;
 			</button>
 			
 			<div id="strategyTrack" class="flex gap-4 md:gap-12 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar">
 				{strategyCards.map((card) => (
-					<div class="flex-shrink-0 w-[45%] md:w-[22%] snap-center bg-gradient-to-b from-black via-black to-[#00E814] border-2 border-[#00E814] rounded-2xl p-4 md:p-6 hover:border-[#00E814]/80 transition-colors h-[400px] md:h-[500px]" style="box-shadow: 0 0 10px #00E814, 0 0 20px #00E814, 0 0 30px #00E814;">
+					<div class="flex-shrink-0 w-[45%] md:w-[22%] snap-center bg-gradient-to-b from-black via-black to-[#00E814] border-2 border-[#00E814] rounded-2xl p-4 md:p-6 hover:border-[#00E814]/80 transition-colors h-[400px] md:h-[500px]" style="box-shadow: 0 0 5px #00E814, 0 0 10px #00E814, 0 0 15px #00E814;">
 						<h3 class="text-black text-xl md:text-2xl font-bold text-center py-2 md:py-3 rounded-lg mb-4 md:mb-6" style="background-color: #00E814;">
 							{card.title}
 						</h3>
@@ -64,7 +64,7 @@ const strategyCards = [
 			</div>
 			
 			<!-- Botón Derecho (solo móvil) -->
-			<button onclick="const track = document.getElementById('strategyTrack'); const cardWidth = track.children[0].offsetWidth; track.scrollBy({left: cardWidth * 2 + 16, behavior: 'smooth'})" class="md:hidden absolute right-2 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-black border-2 border-[#00E814] rounded-full flex items-center justify-center text-[#00E814] text-2xl font-bold cursor-pointer" style="box-shadow: 0 0 10px #00E814, 0 0 20px #00E814;">
+			<button onclick="const track = document.getElementById('strategyTrack'); const cardWidth = track.children[0].offsetWidth; track.scrollBy({left: cardWidth * 2 + 16, behavior: 'smooth'})" class="md:hidden absolute right-2 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-black border-2 border-[#00E814] rounded-full flex items-center justify-center text-[#00E814] text-2xl font-bold cursor-pointer" style="box-shadow: 0 0 5px #00E814, 0 0 10px #00E814;">
 				&gt;
 			</button>
 		</div>
