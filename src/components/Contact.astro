@@ -1,0 +1,139 @@
+<section id="contacto" class="py-20 relative overflow-hidden">
+	<!-- Background -->
+	<div class="absolute inset-0 bg-gradient-to-b from-black via-emerald-dark/30 to-black"></div>
+	<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+
+	<div class="relative z-10">
+		<!-- Section Title -->
+		<div class="text-center mb-16 px-4">
+			<h2 class="text-[#00E814] text-4xl md:text-5xl lg:text-6xl font-black mb-4" style="text-shadow: 0 0 5px #00E814, 0 0 10px #00E814;">
+				Contáctenos
+			</h2>
+			<p class="text-white text-lg max-w-2xl mx-auto">
+				Estamos aquí para ayudarte. Envíanos un mensaje y te responderemos lo antes posible.
+			</p>
+		</div>
+
+		<!-- Contact Form and Info -->
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4">
+			<!-- Contact Form -->
+			<div>
+				<div class="bg-gradient-to-b from-black via-black to-[#00E814] border-2 border-[#00E814] rounded-2xl p-6" style="box-shadow: 0 0 10px #00E814, 0 0 20px #00E814, 0 0 30px #00E814;">
+					<h3 class="text-black text-xl font-bold text-center py-2 rounded-lg mb-4" style="background-color: #00E814;">
+						Formulario de Contacto
+					</h3>
+					<form class="space-y-4">
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+							<div>
+								<label for="nombre" class="block text-white font-semibold mb-1 text-sm">Nombre</label>
+								<input 
+									type="text" 
+									id="nombre" 
+									name="nombre" 
+									required
+									class="w-full px-3 py-2 bg-black/50 backdrop-blur-sm border border-[#00E814]/50 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#00E814] transition-all text-sm"
+									placeholder="Tu nombre"
+								/>
+							</div>
+							<div>
+								<label for="email" class="block text-white font-semibold mb-1 text-sm">Email</label>
+								<input 
+									type="email" 
+									id="email" 
+									name="email" 
+									required
+									class="w-full px-3 py-2 bg-black/50 backdrop-blur-sm border border-[#00E814]/50 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#00E814] transition-all text-sm"
+									placeholder="tu@email.com"
+								/>
+							</div>
+						</div>
+
+						<div>
+							<label for="telefono" class="block text-white font-semibold mb-1 text-sm">Teléfono</label>
+							<input 
+								type="tel" 
+								id="telefono" 
+								name="telefono"
+								class="w-full px-3 py-2 bg-black/50 backdrop-blur-sm border border-[#00E814]/50 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#00E814] transition-all text-sm"
+								placeholder="+57 300 123 4567"
+							/>
+						</div>
+
+						<div>
+							<label for="servicio" class="block text-white font-semibold mb-1 text-sm">Servicio de Interés</label>
+							<select 
+								id="servicio" 
+								name="servicio"
+								class="w-full px-3 py-2 bg-black/50 backdrop-blur-sm border border-[#00E814]/50 rounded-lg text-white focus:outline-none focus:border-[#00E814] transition-all text-sm"
+							>
+								<option value="">Selecciona un servicio</option>
+								<option value="actividades-humanitarias">Actividades Humanitarias</option>
+								<option value="empresas">Jornadas para Empresas</option>
+								<option value="legal">Acompañamiento Legal</option>
+								<option value="otro">Otro</option>
+							</select>
+						</div>
+
+						<div>
+							<label for="mensaje" class="block text-white font-semibold mb-1 text-sm">Mensaje</label>
+							<textarea 
+								id="mensaje" 
+								name="mensaje" 
+								rows="3" 
+								required
+								class="w-full px-3 py-2 bg-black/50 backdrop-blur-sm border border-[#00E814]/50 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#00E814] transition-all resize-none text-sm"
+								placeholder="¿En qué podemos ayudarte?"
+							></textarea>
+						</div>
+
+						<button 
+							type="submit"
+							class="w-full px-6 py-3 bg-black border-2 border-[#00E814] text-[#00E814] font-bold text-base rounded-lg hover:bg-[#00E814] hover:text-black transition-all duration-300"
+							style="box-shadow: 0 0 10px #00E814, 0 0 20px #00E814;"
+						>
+							Enviar Mensaje
+						</button>
+					</form>
+				</div>
+			</div>
+
+			<!-- Contact Info -->
+			<div class="flex flex-col justify-center space-y-4">
+				<div class="bg-black border-2 border-[#00E814] rounded-xl p-4 flex items-center gap-4" style="box-shadow: 0 0 10px #00E814, 0 0 20px #00E814;">
+					<div class="w-10 h-10 rounded-full bg-[#00E814] flex items-center justify-center flex-shrink-0">
+						<svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
+							<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+						</svg>
+					</div>
+					<div>
+						<h4 class="text-white font-bold text-sm">WhatsApp</h4>
+						<p class="text-white text-sm">315 881 8146</p>
+					</div>
+				</div>
+				<div class="bg-black border-2 border-[#00E814] rounded-xl p-4 flex items-center gap-4" style="box-shadow: 0 0 10px #00E814, 0 0 20px #00E814;">
+					<div class="w-10 h-10 rounded-full bg-[#00E814] flex items-center justify-center flex-shrink-0">
+						<svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+						</svg>
+					</div>
+					<div>
+						<h4 class="text-white font-bold text-sm">Email</h4>
+						<p class="text-white text-sm">info@misionhumanitaria.com</p>
+					</div>
+				</div>
+				<div class="bg-black border-2 border-[#00E814] rounded-xl p-4 flex items-center gap-4" style="box-shadow: 0 0 10px #00E814, 0 0 20px #00E814;">
+					<div class="w-10 h-10 rounded-full bg-[#00E814] flex items-center justify-center flex-shrink-0">
+						<svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+						</svg>
+					</div>
+					<div>
+						<h4 class="text-white font-bold text-sm">Ubicación</h4>
+						<p class="text-white text-sm">Bogotá, Colombia</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

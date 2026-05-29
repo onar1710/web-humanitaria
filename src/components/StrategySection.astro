@@ -1,0 +1,85 @@
+---
+const strategyCards = [
+	{
+		title: 'Para Alcaldías',
+		icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+		color: 'blue',
+		items: ['Gafas corrientes gratuitas', 'Prótesis dentales sencillas gratuitas', 'Asesorías legales gratuitas', 'Exámenes de optometría gratis']
+	},
+	{
+		title: 'Para Empresas',
+		icon: 'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
+		color: 'emerald',
+		items: ['Jornadas con examen gratis', 'Venta de gafas (todas)', 'Venta de prótesis dentales', 'Asesorías legales gratuitas']
+	},
+	{
+		title: 'Lo que Vendemos',
+		icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+		color: 'purple',
+		items: ['Gafas Especiales', 'Prótesis Dentales', 'Tratamientos Odontológicos', 'Asesorías Legales']
+	},
+	{
+		title: 'Asesoría Legal',
+		icon: 'M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z',
+		color: 'orange',
+		items: ['Servicios jurídicos', 'Acompañamiento con abogados', 'Consultoría jurídica', 'Gestión legal']
+	}
+];
+---
+
+<section class="relative py-12 bg-gradient-to-b from-black to-gray-900">
+	<!-- Background Effects -->
+	<div class="absolute inset-0 bg-gradient-to-r from-emerald-900/20 via-transparent to-emerald-900/20"></div>
+	<div class="absolute top-0 left-1/4 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+	<div class="absolute bottom-0 right-1/4 w-64 h-64 bg-emerald-600/10 rounded-full blur-3xl"></div>
+
+	<div class="relative z-10 container mx-auto px-4">
+		<h2 class="text-[#00E814] text-2xl md:text-3xl font-bold text-center mb-8" style="text-shadow: 0 0 5px #00E814, 0 0 10px #00E814;">
+			Nuestra Estrategia Comercial
+		</h2>
+		
+		<!-- Swiper Container -->
+		<div class="relative py-5">
+			<!-- Botón Izquierdo (solo móvil) -->
+			<button onclick="const track = document.getElementById('strategyTrack'); const cardWidth = track.children[0].offsetWidth; track.scrollBy({left: -(cardWidth * 2 + 16), behavior: 'smooth'})" class="md:hidden absolute left-2 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-black border-2 border-[#00E814] rounded-full flex items-center justify-center text-[#00E814] text-2xl font-bold cursor-pointer" style="box-shadow: 0 0 10px #00E814, 0 0 20px #00E814;">
+				&lt;
+			</button>
+			
+			<div id="strategyTrack" class="flex gap-4 md:gap-12 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar">
+				{strategyCards.map((card) => (
+					<div class="flex-shrink-0 w-[45%] md:w-[22%] snap-center bg-gradient-to-b from-black via-black to-[#00E814] border-2 border-[#00E814] rounded-2xl p-4 md:p-6 hover:border-[#00E814]/80 transition-colors h-[400px] md:h-[500px]" style="box-shadow: 0 0 10px #00E814, 0 0 20px #00E814, 0 0 30px #00E814;">
+						<h3 class="text-black text-xl md:text-2xl font-bold text-center py-2 md:py-3 rounded-lg mb-4 md:mb-6" style="background-color: #00E814;">
+							{card.title}
+						</h3>
+						<ul class="text-gray-300 space-y-3 md:space-y-4">
+							{card.items.map((item) => (
+								<li class="flex items-center gap-2 md:gap-3 text-sm md:text-lg">
+									<span class="text-[#00E814] text-lg md:text-xl">✓</span>
+									{item}
+								</li>
+							))}
+						</ul>
+					</div>
+				))}
+			</div>
+			
+			<!-- Botón Derecho (solo móvil) -->
+			<button onclick="const track = document.getElementById('strategyTrack'); const cardWidth = track.children[0].offsetWidth; track.scrollBy({left: cardWidth * 2 + 16, behavior: 'smooth'})" class="md:hidden absolute right-2 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-black border-2 border-[#00E814] rounded-full flex items-center justify-center text-[#00E814] text-2xl font-bold cursor-pointer" style="box-shadow: 0 0 10px #00E814, 0 0 20px #00E814;">
+				&gt;
+			</button>
+		</div>
+	</div>
+</section>
+
+<style>
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+	.no-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+	.swiper-container {
+		touch-action: pan-y;
+	}
+</style>

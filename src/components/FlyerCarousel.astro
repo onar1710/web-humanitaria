@@ -1,0 +1,66 @@
+---
+const flyers = [
+	'/flyer_mision_humanitaria.png',
+	'/flyer_optica_verde.png',
+	'/mision_humanitaria_azul.png',
+	'/nuevo_flyer_mision_humanitaria.png'
+];
+---
+
+<section class="relative py-8 md:py-12 bg-black">
+	<div class="relative z-10 container mx-auto px-2 md:px-4">
+		<!-- Flyer Carousel -->
+		<div class="relative">
+			<div class="overflow-hidden">
+				<div id="flyerTrack" class="flex overflow-x-scroll snap-x snap-mandatory gap-3 md:gap-6 scroll-smooth no-scrollbar">
+					{flyers.map((flyer) => (
+						<div class="flex-shrink-0 w-1/2 md:w-1/3 aspect-[3/4] snap-center">
+							<img 
+								src={flyer} 
+								alt="Flyer Misión Humanitaria" 
+								class="w-full h-full object-contain border-2 border-[#39ff14] rounded-xl md:rounded-2xl shadow-[0_0_10px_rgba(57,255,20,0.5),0_0_20px_rgba(57,255,20,0.3)]"
+							/>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const track = document.getElementById('flyerTrack');
+		if (!track) return;
+
+		let currentIndex = 0;
+		const items = track.querySelectorAll('.snap-center');
+		
+		const nextSlide = () => {
+			currentIndex = (currentIndex + 1) % items.length;
+			const item = items[currentIndex];
+			if (!item) return;
+
+			const trackCenter = track.clientWidth / 2;
+			const itemCenter = item.offsetLeft + item.clientWidth / 2;
+			const scrollPosition = itemCenter - trackCenter;
+
+			track.scrollTo({
+				left: scrollPosition,
+				behavior: 'smooth'
+			});
+		};
+
+		setInterval(nextSlide, 3000);
+	});
+</script>
+
+<style>
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+	.no-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+</style>

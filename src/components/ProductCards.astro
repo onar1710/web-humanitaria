@@ -1,0 +1,114 @@
+---
+const products = [
+	{
+		name: 'Valoración Visual',
+		description: 'Examen completo de la vista para detectar problemas visuales.',
+		tag: 'PRODUCTO PARTICIPANTE',
+		price: 'Gratis'
+	},
+	{
+		name: 'Valoración Odontológica',
+		description: 'Revisión dental completa para empleados.',
+		tag: 'OFERTA',
+		price: 'Gratis'
+	},
+	{
+		name: 'Asesoría Legal',
+		description: 'Consultoría legal para empresas y empleados.',
+		tag: 'PRODUCTO PARTICIPANTE',
+		price: 'Gratis'
+	},
+	{
+		name: 'Misión Humanitaria',
+		description: 'Servicios integrales de salud para tu empresa.',
+		tag: 'OFERTA',
+		price: 'Gratis'
+	}
+];
+---
+
+<section class="relative py-40 bg-black">
+	<!-- Background Effects -->
+	<div class="absolute inset-0 bg-gradient-to-br from-black via-emerald-dark to-purple-shadow opacity-50"></div>
+	<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+	<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-shadow/20 rounded-full blur-3xl"></div>
+
+	<div class="relative z-10 container mx-auto px-4">
+		<!-- Cards Carousel -->
+		<div class="relative">
+			<!-- Carrusel -->
+			<div class="overflow-hidden">
+				<div id="productsTrack" class="flex transition-transform duration-500 gap-6">
+					{products.map((product) => (
+						<div class="relative group flex-shrink-0 w-1/2 md:w-1/4">
+							<!-- Card Container -->
+							<div class="relative bg-gradient-to-br from-gray-900 to-black border-2 border-[#39ff14] rounded-2xl overflow-hidden hover:border-[#39ff14] transition-all duration-300 hover:shadow-neon hover:scale-105 h-full">
+								
+								<!-- Top Tag -->
+								<div class="bg-gradient-to-r from-[#39ff14] to-[#00ff88] px-4 py-2">
+									<span class="text-black font-bold text-sm uppercase tracking-wider">
+										{product.tag}
+									</span>
+								</div>
+
+								<!-- Card Content -->
+								<div class="p-6">
+									<h3 class="text-white font-bold text-lg md:text-xl mb-4 md:mb-6 group-hover:text-[#39ff14] transition-colors">
+										{product.name}
+									</h3>
+									<p class="text-gray-400 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed">
+										{product.description}
+									</p>
+									
+									<!-- Price -->
+									<div class="flex items-center justify-between mt-6 md:mt-8 pt-4 md:pt-6 border-t border-[#39ff14]/20">
+										<span class="text-[#39ff14] font-bold text-xl md:text-2xl">
+											{product.price}
+										</span>
+										<button class="px-3 md:px-4 py-2 bg-[#39ff14] hover:bg-[#00ff88] text-black font-bold rounded-lg transition-colors text-xs md:text-sm">
+											Ver más
+										</button>
+									</div>
+								</div>
+
+								<!-- Glow Effect on Hover -->
+								<div class="absolute inset-0 bg-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const track = document.getElementById('productsTrack');
+		if (!track) return;
+
+		let scrollPosition = 0;
+		const scrollSpeed = 0.5;
+
+		const scrollProducts = () => {
+			scrollPosition += scrollSpeed;
+			const maxScroll = track.scrollWidth - track.clientWidth;
+			
+			if (scrollPosition >= maxScroll) {
+				scrollPosition = 0;
+			}
+			
+			track.scrollLeft = scrollPosition;
+			requestAnimationFrame(scrollProducts);
+		};
+
+		// Iniciar el carrusel automático
+		scrollProducts();
+	});
+</script>
+
+<style>
+	.shadow-neon {
+		box-shadow: 0 0 20px rgba(57, 255, 20, 0.3), 0 0 40px rgba(57, 255, 20, 0.1);
+	}
+</style>

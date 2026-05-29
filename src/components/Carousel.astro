@@ -1,0 +1,113 @@
+---
+const images = [
+	'/carrusel/JytLh.jpg',
+	'/carrusel/VnOrM.jpg',
+	'/carrusel/jOfIq.jpg',
+	'/carrusel/lZ7Ni.jpg',
+];
+---
+
+<section class="relative w-full h-56 md:h-64 overflow-hidden flex bg-emerald-500">
+	<!-- Carrusel -->
+	<div class="relative flex-1 overflow-hidden h-full">
+		<!-- Botón anterior -->
+		<button id="prevBtn" class="absolute left-1 md:left-2 top-1/2 transform -translate-y-1/2 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-colors" style="background-color: rgba(0,255,0,0.5);">
+			<svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="black" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+			</svg>
+		</button>
+
+		<div id="carouselTrack" class="flex transition-transform duration-500 h-full">
+			{images.map((image) => (
+				<div class="w-full h-full flex-shrink-0">
+					<img 
+						src={image} 
+						alt="Carrusel Misión Humanitaria" 
+						class="w-full h-full object-cover"
+					/>
+				</div>
+			))}
+		</div>
+
+		<!-- Botón siguiente -->
+		<button id="nextBtn" class="absolute right-1 md:right-2 top-1/2 transform -translate-y-1/2 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-colors" style="background-color: rgba(0,255,0,0.5);">
+			<svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="black" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+			</svg>
+		</button>
+	</div>
+
+	<!-- Línea vertical de separación morada degradada -->
+	<div class="w-1 h-full flex-shrink-0 bg-gradient-to-b from-purple-400 via-purple-600 to-purple-400"></div>
+
+	<!-- Imagen fija a la derecha -->
+	<div class="w-56 md:w-96 h-full flex-shrink-0">
+		<img 
+			src="/carrusel/ch7bj.jpg" 
+			alt="Imagen fija" 
+			class="w-full h-full object-cover"
+		/>
+	</div>
+</section>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const track = document.getElementById('carouselTrack');
+		const prevBtn = document.getElementById('prevBtn');
+		const nextBtn = document.getElementById('nextBtn');
+		let currentIndex = 0;
+		const totalImages = 4;
+		let autoPlayInterval;
+
+		const updateCarousel = () => {
+			if (track) {
+				track.style.transform = `translateX(-${currentIndex * 100}%)`;
+			}
+		};
+
+		const nextSlide = () => {
+			currentIndex = (currentIndex + 1) % totalImages;
+			updateCarousel();
+		};
+
+		const prevSlide = () => {
+			currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+			updateCarousel();
+		};
+
+		const startAutoPlay = () => {
+			autoPlayInterval = setInterval(nextSlide, 3000);
+		};
+
+		const stopAutoPlay = () => {
+			if (autoPlayInterval) {
+				clearInterval(autoPlayInterval);
+			}
+		};
+
+		if (prevBtn) {
+			prevBtn.addEventListener('click', () => {
+				prevSlide();
+				stopAutoPlay();
+				startAutoPlay();
+			});
+		}
+
+		if (nextBtn) {
+			nextBtn.addEventListener('click', () => {
+				nextSlide();
+				stopAutoPlay();
+				startAutoPlay();
+			});
+		}
+
+		// Start auto-play
+		startAutoPlay();
+
+		// Pause on hover
+		if (track) {
+			track.addEventListener('mouseenter', stopAutoPlay);
+			track.addEventListener('mouseleave', startAutoPlay);
+		}
+	});
+</script>

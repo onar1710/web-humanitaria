@@ -1,0 +1,93 @@
+---
+const aboutData = {
+	mission: 'Brindar servicios integrales de salud visual, odontológica, asesoría legal y contable a comunidades vulnerables y empresas, mejorando la calidad de vida de miles de colombianos.',
+	vision: 'Ser la organización líder en servicios de salud y bienestar en Colombia, reconocida por nuestra excelencia, compromiso social y impacto positivo en las comunidades.',
+	values: [
+		{ title: 'Compromiso Social', description: 'Dedicados a servir a quienes más nos necesitan' },
+		{ title: 'Excelencia', description: 'Calidad profesional en cada servicio que ofrecemos' },
+		{ title: 'Integridad', description: 'Transparencia y honestidad en todas nuestras acciones' },
+		{ title: 'Innovación', description: 'Soluciones modernas para necesidades actuales' }
+	],
+	stats: [
+		{ number: '10+', label: 'Años de Experiencia' },
+		{ number: '50K+', label: 'Personas Atendidas' },
+		{ number: '100+', label: 'Empresas Aliadas' },
+		{ number: '20+', label: 'Municipios Cubiertos' }
+	]
+};
+---
+
+<section class="relative py-16 bg-gradient-to-b from-black to-gray-900">
+	<!-- Background Effects -->
+	<div class="absolute inset-0 bg-gradient-to-r from-emerald-900/20 via-transparent to-emerald-900/20"></div>
+	<div class="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+	<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl"></div>
+
+	<div class="relative z-10 container mx-auto px-4">
+		<!-- Título Principal -->
+		<h1 class="text-[#00E814] text-4xl md:text-5xl font-bold text-center mb-4" style="text-shadow: 0 0 10px #00E814, 0 0 20px #00E814, 0 0 30px #00E814, 0 0 40px #00E814;">
+			Quiénes Somos
+		</h1>
+		<p class="text-white text-center text-lg mb-12 max-w-3xl mx-auto">
+			Misión Humanitaria es una organización comprometida con el bienestar de las comunidades colombianas
+		</p>
+
+		<!-- Misión y Visión -->
+		<div class="grid md:grid-cols-2 gap-8 mb-16">
+			<div class="bg-gradient-to-br from-gray-900 to-black border-2 border-[#00E814] rounded-2xl p-8" style="box-shadow: 0 0 10px #00E814, 0 0 20px #00E814, 0 0 30px #00E814;">
+				<h2 class="text-[#00E814] text-2xl font-bold mb-4" style="text-shadow: 0 0 5px #00E814, 0 0 10px #00E814;">
+					Nuestra Misión
+				</h2>
+				<p class="text-white leading-relaxed">
+					{aboutData.mission}
+				</p>
+			</div>
+			<div class="bg-gradient-to-br from-gray-900 to-black border-2 border-[#00E814] rounded-2xl p-8" style="box-shadow: 0 0 10px #00E814, 0 0 20px #00E814, 0 0 30px #00E814;">
+				<h2 class="text-[#00E814] text-2xl font-bold mb-4" style="text-shadow: 0 0 5px #00E814, 0 0 10px #00E814;">
+					Nuestra Visión
+				</h2>
+				<p class="text-white leading-relaxed">
+					{aboutData.vision}
+				</p>
+			</div>
+		</div>
+
+		<!-- Valores -->
+		<div class="mb-16">
+			<h2 class="text-[#00E814] text-3xl font-bold text-center mb-8" style="text-shadow: 0 0 5px #00E814, 0 0 10px #00E814;">
+				Nuestros Valores
+			</h2>
+			<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+				{aboutData.values.map((value) => (
+					<div class="bg-black border-2 border-[#00E814] rounded-2xl p-6 text-center h-full">
+						<h3 class="text-black text-xl font-bold mb-3" style="background-color: #00E814; padding: 8px 16px; border-radius: 8px; display: inline-block;">
+							{value.title}
+						</h3>
+						<p class="text-white text-sm">
+							{value.description}
+						</p>
+					</div>
+				))}
+			</div>
+		</div>
+
+		<!-- Estadísticas -->
+		<div class="bg-gradient-to-br from-gray-900 to-black border-2 border-[#00E814] rounded-2xl p-8" style="box-shadow: 0 0 10px #00E814, 0 0 20px #00E814, 0 0 30px #00E814;">
+			<h2 class="text-[#00E814] text-3xl font-bold text-center mb-8" style="text-shadow: 0 0 5px #00E814, 0 0 10px #00E814;">
+				Nuestro Impacto
+			</h2>
+			<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+				{aboutData.stats.map((stat) => (
+					<div class="text-center">
+						<div class="text-[#00E814] text-4xl md:text-5xl font-bold mb-2" style="text-shadow: 0 0 10px #00E814, 0 0 20px #00E814;">
+							{stat.number}
+						</div>
+						<div class="text-white text-sm md:text-base">
+							{stat.label}
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,136 @@
+---
+---
+
+<section class="relative pt-28 md:pt-28 pb-4 md:pb-0 bg-emerald-500 border-b-4 border-black">
+	<div class="container mx-auto px-4">
+		<div class="flex items-center">
+			<!-- Lado izquierdo: icono de ubicación + Bogotá -->
+			<div class="flex items-center gap-2 text-white font-bold text-base md:text-base ml-0 md:ml-40">
+				<svg class="w-5 h-5 md:w-5 md:h-5" fill="#FF0000" viewBox="0 0 24 24">
+					<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+				</svg>
+				<span>Bogotá</span>
+				<button id="openPopup" class="cursor-pointer hover:scale-110 transition-transform">
+					<svg class="w-5 h-5 md:w-5 md:h-5" fill="white" viewBox="0 0 24 24">
+						<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+					</svg>
+				</button>
+			</div>
+
+			<!-- Espacio flexible -->
+			<div class="flex-1"></div>
+
+			<!-- A partir del centro: icono de teléfono + número -->
+			<a href="tel:3158818146" class="flex items-center gap-2 text-white font-bold text-base md:text-base hover:scale-105 transition-transform cursor-pointer">
+				<svg class="w-5 h-5 md:w-5 md:h-5" fill="#FFFF00" viewBox="0 0 24 24">
+					<path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+				</svg>
+				<span>315 881 8146</span>
+			</a>
+
+			<!-- Espacio entre teléfono e inscripción -->
+			<div class="w-4 md:w-8"></div>
+
+			<!-- Icono de inscripción -->
+			<a href="#contacto" class="flex items-center gap-2 text-white font-bold text-base md:text-base hover:scale-105 transition-transform cursor-pointer">
+				<svg class="w-5 h-5 md:w-5 md:h-5" fill="white" viewBox="0 0 24 24">
+					<path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+				</svg>
+				<span class="hidden md:inline">Inscríbete Misión Humanitaria</span>
+				<span class="md:hidden">Inscríbete</span>
+				<span class="mx-2 md:mx-4 hidden md:inline">NIT 830123548-3</span>
+			</a>
+
+			<!-- Espacio flexible igual al izquierdo -->
+			<div class="flex-1"></div>
+		</div>
+	</div>
+</section>
+
+<!-- Popup Modal -->
+<div id="popup" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+	<div class="bg-white rounded-3xl p-8 max-w-md mx-4 text-center shadow-2xl transform scale-95 transition-transform duration-300 relative">
+		<!-- Close Button -->
+		<button id="closePopupBtn" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+			<svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+			</svg>
+		</button>
+
+		<!-- Icon - Logo de Misión Humanitaria -->
+		<div class="w-16 h-16 mx-auto mb-6 rounded-full bg-emerald-100 flex items-center justify-center">
+			<svg class="w-10 h-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M35 10 L65 10 L65 35 L90 35 L90 65 L65 65 L65 90 L35 90 L35 65 L10 65 L10 35 L35 35 Z" fill="#39ff14" stroke="black" stroke-width="3"/>
+			</svg>
+		</div>
+
+		<h2 class="text-2xl font-bold text-gray-900 mb-3">Consulta Gratuita</h2>
+		<p class="text-gray-600 mb-2">Servicio Humanitario</p>
+		<p class="text-gray-500 text-sm mb-6">Obtén información gratuita sobre nuestros servicios humanitarios en Bogotá. Estamos aquí para ayudarte.</p>
+
+		<a href="#contacto" id="closePopup" class="inline-block w-full px-6 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-bold rounded-xl hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+			Ir a Contacto
+		</a>
+	</div>
+</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const openPopup = document.getElementById('openPopup');
+		const closePopup = document.getElementById('closePopup');
+		const closePopupBtn = document.getElementById('closePopupBtn');
+		const popup = document.getElementById('popup');
+		const popupContent = popup?.querySelector('div');
+
+		const showPopup = () => {
+			if (!popup) return;
+			popup.classList.remove('hidden');
+			setTimeout(() => {
+				popup.classList.remove('opacity-0');
+				if (popupContent) {
+					popupContent.classList.remove('scale-95');
+					popupContent.classList.add('scale-100');
+				}
+			}, 10);
+		};
+
+		const hidePopup = () => {
+			if (!popup) return;
+			popup.classList.add('opacity-0');
+			if (popupContent) {
+				popupContent.classList.remove('scale-100');
+				popupContent.classList.add('scale-95');
+			}
+			setTimeout(() => {
+				popup.classList.add('hidden');
+			}, 300);
+		};
+
+		if (openPopup) {
+			openPopup.addEventListener('click', showPopup);
+		}
+
+		if (closePopup) {
+			closePopup.addEventListener('click', hidePopup);
+		}
+
+		if (closePopupBtn) {
+			closePopupBtn.addEventListener('click', hidePopup);
+		}
+
+		if (popup) {
+			popup.addEventListener('click', (e) => {
+				if (e.target === popup) {
+					hidePopup();
+				}
+			});
+		}
+
+		// Close on Escape key
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && !popup?.classList.contains('hidden')) {
+				hidePopup();
+			}
+		});
+	});
+</script>
