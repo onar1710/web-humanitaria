@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Sobre Nosotros - Misión Humanitaria';
+const description = 'Conoce a Misión Humanitaria - Nuestra misión es proporcionar servicios de salud visual, odontológica y asesoría legal a personas vulnerables en Colombia. Trabajamos con alcaldías y empresas.';
+---
+
+<Layout title={title} description={description}>
+	<main class="pt-24 pb-16 px-4">
+		<div class="max-w-4xl mx-auto">
+			<!-- Título de la página -->
+			<h1 class="text-4xl md:text-5xl font-bold text-[#00E814] mb-8">
+				Sobre Nosotros
+			</h1>
+
+			<!-- Introducción -->
+			<section class="mb-12">
+				<h2 class="text-2xl font-bold text-white mb-4">Nuestra Misión</h2>
+				<p class="text-gray-300 text-lg leading-relaxed mb-4">
+					Misión Humanitaria es una organización comprometida con el bienestar de las comunidades más vulnerables en Colombia. Nuestra misión es proporcionar acceso a servicios de salud visual, odontológica y asesoría legal a personas que no pueden costear estos servicios esenciales.
+				</p>
+				<p class="text-gray-300 text-lg leading-relaxed">
+					Trabajamos en colaboración con alcaldías, empresas y organizaciones para llevar nuestros servicios a quienes más los necesitan, creando un impacto positivo y duradero en la calidad de vida de miles de colombianos.
+				</p>
+			</section>
+
+			<!-- Visión -->
+			<section class="mb-12">
+				<h2 class="text-2xl font-bold text-white mb-4">Nuestra Visión</h2>
+				<p class="text-gray-300 text-lg leading-relaxed">
+					Ser la organización líder en servicios humanitarios en Colombia, reconocida por nuestra excelencia, compromiso y capacidad para transformar vidas a través de programas integrales de salud y bienestar. Aspiramos a un país donde todas las personas tengan acceso equitativo a servicios de salud y asesoría legal, sin importar su condición económica.
+				</p>
+			</section>
+
+			<!-- Valores -->
+			<section class="mb-12">
+				<h2 class="text-2xl font-bold text-white mb-4">Nuestros Valores</h2>
+				<ul class="text-gray-300 text-lg space-y-4">
+					<li class="flex items-start gap-3">
+						<span class="text-[#00E814] text-xl mt-1">•</span>
+						<span><strong class="text-white">Solidaridad:</strong> Creemos en la importancia de ayudar a los demás y trabajar juntos por el bien común.</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<span class="text-[#00E814] text-xl mt-1">•</span>
+						<span><strong class="text-white">Integridad:</strong> Actuamos con honestidad, transparencia y ética en todas nuestras acciones.</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<span class="text-[#00E814] text-xl mt-1">•</span>
+						<span><strong class="text-white">Compromiso:</strong> Estamos dedicados a nuestra causa y trabajamos incansablemente para lograr nuestros objetivos.</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<span class="text-[#00E814] text-xl mt-1">•</span>
+						<span><strong class="text-white">Excelencia:</strong> Buscamos la calidad en todos nuestros servicios y programas.</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<span class="text-[#00E814] text-xl mt-1">•</span>
+						<span><strong class="text-white">Respeto:</strong> Tratamos a todas las personas con dignidad y consideración, valorando su diversidad.</span>
+					</li>
+				</ul>
+			</section>
+
+			<!-- Historia -->
+			<section class="mb-12">
+				<h2 class="text-2xl font-bold text-white mb-4">Nuestra Historia</h2>
+				<p class="text-gray-300 text-lg leading-relaxed mb-4">
+					Misión Humanitaria nació de la necesidad de brindar servicios de salud y asesoría legal a poblaciones vulnerables en Colombia. Desde nuestros inicios, hemos trabajado incansablemente para expandir nuestro alcance y mejorar la calidad de nuestros servicios.
+				</p>
+				<p class="text-gray-300 text-lg leading-relaxed mb-4">
+					A lo largo de los años, hemos establecido alianzas estratégicas con alcaldías, empresas privadas y organizaciones sin ánimo de lucro, permitiéndonos multiplicar nuestro impacto y llegar a más comunidades en todo el país.
+				</p>
+				<p class="text-gray-300 text-lg leading-relaxed">
+					Hoy, nos enorgullece haber ayudado a miles de personas a mejorar su calidad de vida a través de nuestros programas de salud visual, odontológica y asesoría legal, y continuamos trabajando para expandir nuestros servicios y beneficiar a más colombianos.
+				</p>
+			</section>
+
+			<!-- Servicios -->
+			<section class="mb-12">
+				<h2 class="text-2xl font-bold text-white mb-4">Nuestros Servicios</h2>
+				<ul class="text-gray-300 text-lg space-y-4">
+					<li class="flex items-start gap-3">
+						<span class="text-[#00E814] text-xl mt-1">•</span>
+						<span><strong class="text-white">Valoración Visual:</strong> Exámenes de optometría y entrega de gafas corrientes sin costo para personas de bajos recursos.</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<span class="text-[#00E814] text-xl mt-1">•</span>
+						<span><strong class="text-white">Valoración Odontológica:</strong> Prótesis dentales sencillas y tratamientos odontológicos básicos sin costo.</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<span class="text-[#00E814] text-xl mt-1">•</span>
+						<span><strong class="text-white">Asesoría Legal:</strong> Servicios jurídicos, acompañamiento con abogados y consultoría legal sin costo.</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<span class="text-[#00E814] text-xl mt-1">•</span>
+						<span><strong class="text-white">Jornadas para Empresas:</strong> Programas integrales de salud y bienestar para empleados de empresas.</span>
+					</li>
+				</ul>
+			</section>
+
+			<!-- Compromiso -->
+			<section class="mb-12">
+				<h2 class="text-2xl font-bold text-white mb-4">Nuestro Compromiso</h2>
+				<p class="text-gray-300 text-lg leading-relaxed">
+					En Misión Humanitaria, nos comprometemos a continuar trabajando con dedicación y pasión para mejorar la vida de las personas más vulnerables en Colombia. Seguiremos expandiendo nuestros servicios, estableciendo nuevas alianzas y buscando formas innovadoras de llevar ayuda a quienes más la necesitan.
+				</p>
+			</section>
+
+			<!-- Contacto -->
+			<section class="mb-12">
+				<h2 class="text-2xl font-bold text-white mb-4">Contáctenos</h2>
+				<p class="text-gray-300 text-lg leading-relaxed mb-4">
+					Si desea obtener más información sobre nuestros servicios, colaborar con nosotros o solicitar nuestra ayuda, no dude en contactarnos.
+				</p>
+				<p class="text-gray-300 text-lg leading-relaxed">
+					<strong class="text-white">Teléfono:</strong> 315 881 8146<br>
+					<strong class="text-white">Email:</strong> gestionmisionhumanitaria@gmail.co<br>
+					<strong class="text-white">Ubicación:</strong> Bogotá, Colombia
+				</p>
+				<p class="text-gray-300 text-lg leading-relaxed mt-4">
+					También puede visitarnos en nuestra página de contacto para enviar un mensaje directamente.
+				</p>
+			</section>
+		</div>
+	</main>
+	<Footer />
+</Layout>

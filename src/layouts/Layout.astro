@@ -1,18 +1,28 @@
+---
+const { title = 'Misión Humanitaria', description = 'Misión Humanitaria - Servicios de salud visual, odontología y asesoría legal en Bogotá. Gafas corrientes, prótesis dentales y servicios jurídicos sin costo para población vulnerable.', image } = Astro.props;
+import Header from '../components/Header.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+import SEO from '../components/SEO.astro';
+---
+
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Misión Humanitaria</title>
+		<title>{title}</title>
+		<SEO title={title} description={description} image={image} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+		<link rel="icon" href="/favicon.ico?v=2" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 	</head>
 	<body class="bg-black text-white antialiased">
+		<Header />
 		<slot />
+		<CookieBanner />
 	</body>
 </html>
 

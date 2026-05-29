@@ -4,30 +4,24 @@ const strategyCards = [
 		title: 'Para Alcaldías',
 		icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
 		color: 'blue',
-		items: ['Gafas corrientes gratuitas', 'Prótesis dentales sencillas gratuitas', 'Asesorías legales gratuitas', 'Exámenes de optometría gratis']
+		items: ['Gafas corrientes sin costo', 'Prótesis dentales sencillas sin costo', 'Asesorías legales sin costo', 'Exámenes de optometría sin costo', 'Atención a población vulnerable', 'Programas de salud visual', 'Campañas preventivas']
 	},
 	{
 		title: 'Para Empresas',
 		icon: 'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
 		color: 'emerald',
-		items: ['Jornadas con examen gratis', 'Venta de gafas (todas)', 'Venta de prótesis dentales', 'Asesorías legales gratuitas']
-	},
-	{
-		title: 'Lo que Vendemos',
-		icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
-		color: 'purple',
-		items: ['Gafas Especiales', 'Prótesis Dentales', 'Tratamientos Odontológicos', 'Asesorías Legales']
+		items: ['Jornadas con examen sin costo', 'Venta de gafas (todas)', 'Venta de prótesis dentales', 'Asesorías legales sin costo', 'Atención integral', 'Servicios a domicilio', 'Soporte continuo']
 	},
 	{
 		title: 'Asesoría Legal',
 		icon: 'M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z',
 		color: 'orange',
-		items: ['Servicios jurídicos', 'Acompañamiento con abogados', 'Consultoría jurídica', 'Gestión legal']
+		items: ['Servicios jurídicos', 'Acompañamiento con abogados', 'Consultoría jurídica', 'Gestión legal', 'Documentación legal', 'Representación legal', 'Asesoría laboral']
 	}
 ];
 ---
 
-<section class="relative py-12 bg-gradient-to-b from-black to-gray-900">
+<section id="estrategia" class="relative py-12 bg-gradient-to-b from-black to-gray-900">
 	<!-- Background Effects -->
 	<div class="absolute inset-0 bg-gradient-to-r from-emerald-900/20 via-transparent to-emerald-900/20"></div>
 	<div class="absolute top-0 left-1/4 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
@@ -38,35 +32,32 @@ const strategyCards = [
 			Nuestra Estrategia Comercial
 		</h2>
 		
-		<!-- Swiper Container -->
-		<div class="relative py-5">
-			<!-- Botón Izquierdo (solo móvil) -->
-			<button onclick="const track = document.getElementById('strategyTrack'); const cardWidth = track.children[0].offsetWidth; track.scrollBy({left: -(cardWidth * 2 + 16), behavior: 'smooth'})" class="md:hidden absolute left-2 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-black border-2 border-[#00E814] rounded-full flex items-center justify-center text-[#00E814] text-2xl font-bold cursor-pointer" style="box-shadow: 0 0 5px #00E814, 0 0 10px #00E814;">
-				&lt;
-			</button>
-			
-			<div id="strategyTrack" class="flex gap-4 md:gap-12 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar">
-				{strategyCards.map((card) => (
-					<div class="flex-shrink-0 w-[45%] md:w-[22%] snap-center bg-gradient-to-b from-black via-black to-[#00E814] border-2 border-[#00E814] rounded-2xl p-4 md:p-6 hover:border-[#00E814]/80 transition-colors h-[400px] md:h-[500px]" style="box-shadow: 0 0 5px #00E814, 0 0 10px #00E814, 0 0 15px #00E814;">
-						<h3 class="text-black text-xl md:text-2xl font-bold text-center py-2 md:py-3 rounded-lg mb-4 md:mb-6" style="background-color: #00E814;">
-							{card.title}
-						</h3>
-						<ul class="text-gray-300 space-y-3 md:space-y-4">
-							{card.items.map((item) => (
-								<li class="flex items-center gap-2 md:gap-3 text-base md:text-lg">
-									<span class="text-[#00E814] text-lg md:text-xl">✓</span>
-									{item}
-								</li>
-							))}
-						</ul>
-					</div>
-				))}
-			</div>
-			
-			<!-- Botón Derecho (solo móvil) -->
-			<button onclick="const track = document.getElementById('strategyTrack'); const cardWidth = track.children[0].offsetWidth; track.scrollBy({left: cardWidth * 2 + 16, behavior: 'smooth'})" class="md:hidden absolute right-2 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-black border-2 border-[#00E814] rounded-full flex items-center justify-center text-[#00E814] text-2xl font-bold cursor-pointer" style="box-shadow: 0 0 5px #00E814, 0 0 10px #00E814;">
-				&gt;
-			</button>
+		<!-- Grid Container -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+			{strategyCards.map((card) => (
+				<div class="bg-gradient-to-b from-black via-black to-[#00E814]/50 border-2 border-[#00E814]/60 rounded-2xl p-4 md:p-6 hover:border-[#00E814]/80 transition-colors h-[450px] md:h-[550px] flex flex-col" style="box-shadow: 0 0 2px #00E814/50, 0 0 4px #00E814/30;">
+					<h3 class="text-black text-xl md:text-2xl font-bold text-center py-2 md:py-3 rounded-lg mb-4 md:mb-6" style="background-color: #00E814;">
+						{card.title}
+					</h3>
+					<ul class="text-gray-300 space-y-3 md:space-y-4 flex-1">
+						{card.items.map((item) => (
+							<li class="flex items-center gap-2 md:gap-3 text-base md:text-lg">
+								<span class="text-[#00E814] text-lg md:text-xl">✓</span>
+								{item}
+							</li>
+						))}
+					</ul>
+					<a href="https://wa.me/3158818146?text=Hola, quiero más información sobre {card.title}" target="_blank" class="mt-4 flex items-center justify-center rounded-lg overflow-hidden border-2 border-[#00E814]/60 h-12" style="box-shadow: 0 0 2px #00E814/50;">
+						<div class="flex-1 bg-black text-white py-3 px-4 text-center font-bold">Más información</div>
+						<div class="w-1 bg-[#00E814]"></div>
+						<div class="flex-1 bg-[#00E814] text-black py-3 px-4 flex items-center justify-center">
+							<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+							</svg>
+						</div>
+					</a>
+				</div>
+			))}
 		</div>
 	</div>
 </section>

@@ -11,9 +11,13 @@ import AboutUs from '../components/AboutUs.astro';
 import FacebookActivities from '../components/FacebookActivities.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
+
+const title = 'Misión Humanitaria';
+const description = 'Misión Humanitaria - Servicios de salud visual, odontología y asesoría legal en Bogotá. Gafas corrientes, prótesis dentales y servicios jurídicos sin costo para población vulnerable. Ayuda humanitaria para alcaldías y empresas.';
+const image = '/carrusel/jOfIq.jpg';
 ---
 
-<Layout>
+<Layout title={title} description={description} image={image}>
 	<Header />
 	<main>
 		<GreenBanner />
